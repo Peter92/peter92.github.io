@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <title>Website</title>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+    <link href="style.css" rel="stylesheet">
+
+    <style type="text/css">
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  </head>
+  	<body>
+
+      <div class="nav-mobile">
+
+		  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      		<div class="container nav-mobile-container">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle Navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="#">Mouse Tracks (WIP)</a>
+
+				<div class="collapse navbar-collapse" id="containerNavbar">
+				  <ul class="navbar-nav mr-auto">
+
+					<li class="nav-item">
+					  <a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" href="about.html">About<span class="sr-only"> (current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="gallery.html">Gallery</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="download.html">Download</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="data_format.html">Help</a>
+					</li>
+
+				  </ul>
+				</div>
+			  </div>
+		  </nav>
+	  </div>
+
+    <div class="container-fluid fill">
+
+		<div class="container rounded">
+
+		  <div class="nav-main nav-border">
+			<nav>
+				  <ul class="nav nav-pills float-right">
+					<li class="nav-item">
+					  <a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" href="about.html">About<span class="sr-only"> (current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="gallery.html">Gallery</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="download.html">Download</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="data_format.html">Help</a>
+					</li>
+				  </ul>
+			</nav>
+			<a href="index.html" style="text-decoration:none;"><h3 class="text-muted">Mouse Tracks (WIP)</h3></a>
+		  </div>
+
+
+	<div class="lead">
+		  <h2>Overview</h2>
+			  <p>
+			Your mouse and keyboard activity will be tracked independently for each game, allowing you to render high quality images in any colours.
+			All resolutions are recorded separately and merged when generating the images, so lowering or raising your in game resolution won't cause any problems.
+			</p>
+			<p>
+			The idea came about from the Razer Synapse tracking, as it does <a href="https://i.imgur.com/XT3sxc3.png" target="_blank">not cope well</a> with extended use or resolution changes.<br/>
+			It does however do a good job with the keyboard and click heatmaps, and was used for inspiration for this.
+			</p>
+
+      <!-- START THE FEATURETTES -->
+
+		<br/>
+		  <hr >
+		<br/>
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2>Mouse Movement</h2>
+          <p class="lead">Track everywhere the mouse moves, and fade out the older tracks.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto rounded" src="https://picsum.photos/500/279" alt="Generic placeholder image">
+        </div>
+      </div>
+
+		<br/>
+		  <hr >
+		<br/>
+
+      <div class="row featurette">
+        <div class="col-md-7 push-md-5">
+          <h2>Mouse Clicks</h2>
+          <p class="lead">Record every click ever made, and show it on a heatmap. You may choose to hide a particular mouse button, for example if it is only ever used for moving the camera.</p>
+        </div>
+        <div class="col-md-5 pull-md-7">
+          <img class="featurette-image img-fluid mx-auto rounded" src="https://picsum.photos/500/283" alt="Generic placeholder image">
+        </div>
+      </div>
+
+		<br/>
+		  <hr >
+		<br/>
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2>Keystrokes</h2>
+          <p class="lead">Draw a keyboard with colour coded keys, based on number of keystrokes, or the time spent being pressed. This does not act as a keylogger, so you are still safe typing passwords.</p>
+		  <p class="text-muted">Unfortunately this doesn't work on anything related to Steam.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto rounded" src="https://picsum.photos/500/282" alt="Generic placeholder image">
+        </div>
+      </div>
+
+
+      <!-- /END THE FEATURETTES -->
+
+
+
+	</div>
+		<br/>
+      <footer class="footer">
+		  <p>&copy; Peter Hunt&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Website Navigation</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Terms and Conditions</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Privacy</a></p>
+      </footer>
+    </div> <!-- /container -->
+    </div>
+  </body>
+</html>

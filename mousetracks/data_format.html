@@ -1,0 +1,230 @@
+<html>
+  <head>
+    <title>Website</title>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+    <link href="style.css" rel="stylesheet">
+    <link href="sidebar.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  </head>
+  	<body>
+
+
+
+      <div class="nav-mobile">
+
+		  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      		<div class="container nav-mobile-container">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle Navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="#">Mouse Tracks (WIP)</a>
+
+				<div class="collapse navbar-collapse" id="containerNavbar">
+				  <ul class="navbar-nav mr-auto">
+
+					<li class="nav-item">
+					  <a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="gallery.html">Gallery</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="download.html">Download</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" href="data_format.html">Help<span class="sr-only"> (current)</span></a>
+					</li>
+
+				  </ul>
+				</div>
+			  </div>
+		  </nav>
+	  </div>
+
+    <div class="container-fluid fill">
+
+		<div class="container rounded">
+
+		  <div class="nav-main nav-border">
+			<nav>
+				  <ul class="nav nav-pills float-right">
+					<li class="nav-item">
+					  <a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="gallery.html">Gallery</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="download.html">Download</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" href="data_format.html">Help<span class="sr-only"> (current)</span></a>
+					</li>
+				  </ul>
+			</nav>
+			<a href="index.html" style="text-decoration:none;"><h3 class="text-muted">Mouse Tracks (WIP)</h3></a>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-sm-8">
+
+				<div class="lead">
+				  <h2>File Format</h2>
+				  <p>
+					For a combination of compression and speed, the file is currently saved within a zip container, as of version 2.0.10. The numpy arrays are separated from the main data, as numpy has an inbuilt pickle much more effective than cPickle.
+					<br/>
+					While it can take around 25% longer to save, the file size has been cut by 80%.
+					<pre><code> profile.data:
+     _: Pickled data with numpy arrays replaced with integers (eg. data[Maps][Tracks][(1920, 1080)] = 3)
+     n: The number of numpy arrays stored separately
+     0-n: Numpy arrays pickled with numpy.save</code></pre>
+				  </p>
+				  <p>
+					Warning: As the format could change at any time, please use <code>decode_file</code> from <code>/core/files.py</code> to load a file.
+				  </p>
+				</div>
+
+			  <br/>
+				  <hr>
+			  <br/>
+
+				<div class="lead">
+				  <h2>Data Structure</h2>
+				  <p>
+					The structure is typically updated for each version, either to add options or bring certain parts to be more in-line with others. It is recommended you use the inbuilt export options after loading the data.
+				  </p>
+				  <pre><code> <i>*map = {(&lt;int&gt; (width), &lt;int&gt; (height)): &lt;numpy.array((height, width), dtype=uint64)}&gt;</i>
+ <i>*keys = {&lt;str&gt; (key): &lt;int&gt; (count)}</i>
+
+ Ticks: {
+     Total: <i>&lt;int&gt; (count)</i>,
+     Recorded: <i>&lt;int&gt; (count)</i>,
+     Tracks: <i>&lt;int&gt; (count)</i>,
+     Session: {
+         Total: <i>&lt;int&gt; (count)</i>,
+         Tracks: <i>&lt;int&gt; (count)</i>
+     }
+ },
+ Maps: {
+     Tracks: <i>*map</i>,
+     Click: {
+         Single: {
+             Left: <i>*map</i>,
+             Middle: <i>*map</i>,
+             Right: <i>*map</i>
+         },
+         Double: {
+             Left: <i>*map</i>,
+             Middle: <i>*map</i>,
+             Right: <i>*map</i>
+         },
+         'Session': {
+             Single: {
+                 Left: <i>*map</i>,
+                 Middle: <i>*map</i>,
+                 Right: <i>*map</i>
+             },
+             Double: {
+                 Left: <i>*map</i>,
+                 Middle: <i>*map</i>,
+                 Right: <i>*map</i>
+             }
+         }
+     }
+ },
+ Keys: {
+     All: {
+         Held: <i>*keys</i>,
+         Pressed: <i>*keys</i>,
+         Intervals: {
+             Total: <i>{&lt;int&gt; (period): &lt;int&gt; (count)}</i>,
+             Individual: <i>{&lt;str&gt; (key): {&lt;str&gt; (key): {&lt;int&gt; (period): &lt;int&gt; (count)}}}</i>
+         },
+         Mistakes: <i>{&lt;str&gt; (key): *keys}</i>
+     },
+     Session: {
+         Held: <i>*keys</i>,
+         Pressed: <i>*keys</i>,
+         Intervals: {
+             Total: <i>{&lt;int&gt; (period): &lt;int&gt; (count)}</i>,
+             Individual: <i>{&lt;str&gt; (key): {&lt;str&gt; (key): {&lt;int&gt; (period): &lt;int&gt; (count)}}}</i>
+         },
+         Mistakes: <i>{&lt;str&gt; (key): *keys}</i>
+     }
+ },
+ Time: {
+     Created: <i>&lt;float&gt;</i>,
+     Modified: <i>&lt;float&gt;</i>
+ },
+ TimesLoaded: <i>&lt;int&gt;</i>,
+ Version: <i>&lt;str&gt;</i>,
+ SessionStarts: <i>[&lt;float&gt;, &lt;float&gt;...]</i></code></pre>
+					</div>
+				</div>
+
+				<div class="col-sm-3 offset-sm-1">
+				  <!--<input type="text" class="form-control" id="search-input" placeholder="Search..." autocomplete="off">-->
+				  <div class="sidebar">
+					  <div class="sidebar-links">
+						<h5>For Users</h5>
+						<ul class="list-unstyled">
+						  <li><a href="#" class="sidebar-link">Using Colour Maps</a></li>
+						  <ul class="list-unstyled">
+							<li><a href="#" class="sidebar-link">List of Preset Maps</a></li>
+						  </ul>
+						  <li><a href="#" class="sidebar-link">Configuration File</a></li>
+						  <ul class="list-unstyled">
+							<li><a href="#" class="sidebar-link">Main</a></li>
+							<li><a href="#" class="sidebar-link">Paths</a></li>
+							<li><a href="#" class="sidebar-link">Internet</a></li>
+							<li><a href="#" class="sidebar-link">Save</a></li>
+							<li><a href="#" class="sidebar-link">GenerateImages</a></li>
+							<li><a href="#" class="sidebar-link">GenerateTracks</a></li>
+							<li><a href="#" class="sidebar-link">GenerateHeatmap</a></li>
+							<li><a href="#" class="sidebar-link">GenerateKeyboard</a></li>
+							<li><a href="#" class="sidebar-link">GenerateCSV</a></li>
+							<li><a href="#" class="sidebar-link">Advanced</a></li>
+						  </ul>
+						  <li><a href="#" class="sidebar-link">FAQ</a></li>
+						</ul>
+					  </div>
+						<hr class="sidebar-separator">
+					  <div class="sidebar-links">
+						<h5>For Developers</h5>
+						<ul class="list-unstyled">
+						  <li><a href="#" class="sidebar-link ">Getting track/heatmap data</a></li>
+						  <li><a href="#" class="sidebar-link sidebar-link-active">File Format</a></li>
+						  <li><a href="#" class="sidebar-link">Langauge Format</a></li>
+						  <ul class="list-unstyled">
+							<li><a href="#" class="sidebar-link">Console Text</a></li>
+							<li><a href="#" class="sidebar-link">Keyboard Layout</a></li>
+						  </ul>
+						</ul>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+					<br/>
+				  <footer class="footer">
+					  <p>&copy; Peter Hunt&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Website Navigation</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Terms and Conditions</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Privacy</a></p>
+				  </footer>
+		</div>
+	</div>
+  </body>
+</html>

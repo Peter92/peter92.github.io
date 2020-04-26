@@ -1,0 +1,169 @@
+<html>
+  <head>
+    <title>Website</title>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+    <link href="carousel.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <style type="text/css">
+        .slide1, .slide2, .slide3 {
+			min-height: 450px; /* Must have a height or min-height set due to use of background images */
+			background-size: cover;
+			background-position: center center;
+		}
+		.slide1 {
+			background-image: url(https://picsum.photos/1000/300);
+		}
+		.slide2 {
+			background-image: url(https://picsum.photos/1100/300);
+		}
+		.slide3 {
+			background-image: url(https://picsum.photos/1040/400);
+		}
+        </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  </head>
+  	<body>
+
+
+      <div class="nav-mobile">
+
+		  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      		<div class="container nav-mobile-container">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle Navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<a class="navbar-brand" href="#">Mouse Tracks (WIP)</a>
+
+				<div class="collapse navbar-collapse" id="containerNavbar">
+				  <ul class="navbar-nav mr-auto">
+
+					<li class="nav-item">
+					  <a class="nav-link active" href="index.html">Home<span class="sr-only"> (current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="gallery.html">Gallery</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="download.html">Download</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="data_format.html">Help</a>
+					</li>
+
+				  </ul>
+				</div>
+			  </div>
+		  </nav>
+	  </div>
+
+    <div class="container-fluid fill">
+
+		<div class="container rounded">
+
+		  <div class="nav-main">
+			<nav>
+				  <ul class="nav nav-pills float-right">
+					<li class="nav-item">
+					  <a class="nav-link active" href="index.html">Home<span class="sr-only"> (current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="gallery.html">Gallery</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="download.html">Download</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="data_format.html">Help</a>
+					</li>
+				  </ul>
+			</nav>
+			<a href="index.html" style="text-decoration:none;"><h3 class="text-muted">Mouse Tracks (WIP)</h3></a>
+		  </div>
+
+		<div class="lead">
+
+			<div id="carousel" class="carousel carousel-fade" data-ride="carousel">
+				<div class="carousel-inner rounded" role="listbox">
+					<div class="carousel-item active">
+						<a href="#"><div class="slide1"></div></a>
+					</div> <!-- close carousel-item 1 -->
+					<div class="carousel-item" style="position: absolute; top:0px; width: 100% ; height: 100%">
+						<div class="slide2"></div>
+					</div> <!-- close carousel-item 2 -->
+					<div class="carousel-item" style="position: absolute; top:0px; width: 100% ; height: 100%">
+						<div class="slide3"></div>
+					</div> <!-- close carousel-item 3 -->
+				</div> <!-- close carousel-inner -->
+
+		<div class="container container-transparent carousel-overlay text-center">
+			<h1>Record your gaming activity.</h1>
+			<p class="lead">Track your mouse movement, clicks, and keyboard activity in artistic ways.</p>
+			<div class="carousel-buttons">
+				<a class="btn btn-lg btn-primary" href="#">
+					Download for Free
+				</a>
+				<a class="btn btn-lg btn-primary" href="#">
+					Sign Up for Updates
+				</a>
+			</div>
+		</div>
+
+			</div> <!-- close carousel -->
+
+		  <br/>
+
+
+		  <!-- Example row of columns -->
+
+		</div>
+		<div class="lead">
+		  <div class="row">
+			<div class="col-md-6" align="justify">
+			  <h2>What is it?</h2>
+			  <p>
+				Track your mouse and keyboard activity separately for each game, allowing you to render high quality images in the colours of your choice.
+				<br/>
+				It is designed to run quietly in the background, and has features in place to ensure the results still look interesting even after hundreds of hours.
+				</p>
+				<!--
+				<p>
+				All resolutions are recorded separately, so if you try playing something at 4k, and switch to 720p, the results will be merged only when rendering.
+				</p>-->
+			  <p><a class="btn btn-secondary" href="#" role="button">Read more &raquo;</a></p>
+			</div>
+			<div class="col-md-6" align="justify">
+			  <h2>Contribute</h2>
+			  <p>
+				 The full Python source code is available on <a href="https://github.com/Peter92/MouseTracks">github.</a>
+			  </p>
+			  <p>
+				 Anyone is welcome to have a go at tweaking it, though please get in touch if you are either able to translate for your own language, or have some experience coding in Mac/Linux.
+			  </p>
+			  <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+			</div>
+		  </div>
+		</div>
+		  <br/>
+		  <footer class="footer">
+			  <p>&copy; Peter Hunt&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Website Navigation</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Terms and Conditions</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Privacy</a></p>
+		  </footer>
+		</div>
+    </div>
+  </body>
+</html>
